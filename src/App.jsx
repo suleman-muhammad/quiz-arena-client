@@ -7,6 +7,7 @@ import JoinGame from './pages/JoinGame'
 import Lobby from './pages/Lobby'
 import Room from './pages/Room'
 import Login from './pages/Login'
+import Register from './pages/Register'
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                     <Route path='/lobby/:roomCode' element={<Lobby />} />
                     <Route path='/rooms/:roomCode' element={<Room />} />
                     <Route path='/login' element={<Login/>} />
+                    <Route path='/register' element={<Register/>} />
                 </Routes>
             </BrowserRouter>
         </div>
