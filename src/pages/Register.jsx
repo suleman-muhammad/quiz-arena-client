@@ -1,4 +1,20 @@
+import { useState } from "react";
+
 function Register(){
+
+    const [ userName, setUserName ] = useState("");
+    const [ emailAddress, setEmailAddress ] = useState("");
+    const [ password, setPassword ] = useState("");
+    const [ revisedPassowrd, setRevisedPassword ] = useState("");
+
+    function register_user(){
+        console.log(userName);
+        console.log(emailAddress);
+        console.log(password);
+        console.log(revisedPassowrd);
+
+    }
+    
     return (
         <div className="min-h-screen bg-[#0A0E1A] text-[#F9FAFB] flex flex-col justify-center items-center px-4 py-12 sm:px-6 lg:px-8">
             <div className="w-full max-w-md bg-[#111827] border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-2xl flex flex-col gap-6">
@@ -21,6 +37,7 @@ function Register(){
                         </label>
                         <input
                             type="text"
+                            onChange={(e) => {setUserName(e.target.value)}}
                             placeholder="e.g. John Doe"
                             className="w-full bg-[#0A0E1A] border border-gray-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-[#F9FAFB] placeholder:text-gray-500 rounded-xl px-4 py-2.5 text-sm outline-none transition-all"
                         />
@@ -33,6 +50,7 @@ function Register(){
                         </label>
                         <input
                             type="email"
+                            onChange={(e)=> {setEmailAddress(e.target.value)}}
                             placeholder="you@example.com"
                             className="w-full bg-[#0A0E1A] border border-gray-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-[#F9FAFB] placeholder:text-gray-500 rounded-xl px-4 py-2.5 text-sm outline-none transition-all"
                         />
@@ -45,6 +63,7 @@ function Register(){
                         </label>
                         <input
                             type="password"
+                            onChange={(e)=>{setPassword(e.target.value)}}
                             placeholder="At least 6 characters"
                             className="w-full bg-[#0A0E1A] border border-gray-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-[#F9FAFB] placeholder:text-gray-500 rounded-xl px-4 py-2.5 text-sm outline-none transition-all"
                         />
@@ -57,6 +76,7 @@ function Register(){
                         </label>
                         <input
                             type="password"
+                            onChange={(e) => {setRevisedPassword(e.target.value)}}
                             placeholder="Re-enter your password"
                             className="w-full bg-[#0A0E1A] border border-gray-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 text-[#F9FAFB] placeholder:text-gray-500 rounded-xl px-4 py-2.5 text-sm outline-none transition-all"
                         />
@@ -78,6 +98,7 @@ function Register(){
                     {/* Submit Button */}
                     <button
                         type="submit"
+                        onClick={register_user}
                         className="w-full mt-2 bg-amber-500 hover:bg-amber-400 text-black font-extrabold py-3 px-4 rounded-xl text-sm transition duration-200 shadow-lg shadow-amber-500/20 active:scale-[0.98] cursor-pointer"
                     >
                         Create Account
